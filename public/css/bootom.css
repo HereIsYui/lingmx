@@ -1,0 +1,35 @@
+#foot{
+	width: 100%;
+	height: 400px;
+	text-align: center;
+	font-family: '幼圆';
+}
+/* 底部 */
+#foot>svg{
+	width: 100%;
+	height: 200px;
+}
+#foot .foot_copy{
+	color: #fff;
+}
+.foot_copy ul li{
+	width: 70px;
+	height: 70px;
+	margin: 0 20px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	border: 1px solid #c0c0c0;
+	transition: 0.8s;
+	line-height: 70px;
+	background: url(../img/huaji1.png) no-repeat;
+	display: inline-block;
+}
+.foot_copy ul li:hover{
+	width: 70px;
+	height: 70px;
+	color: rgba(0,0,0,0);
+	border-radius: 50%;
+	cursor: pointer;
+	border: 1px solid transparent;
+	background: url(../img/huaji.png) no-repeat;
+}

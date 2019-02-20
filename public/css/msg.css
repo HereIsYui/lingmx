@@ -1,0 +1,159 @@
+body{
+	background: url(../img/banner.jpg) no-repeat fixed;
+	background-size: cover;
+	font-family: '幼圆';
+}
+#content{
+	width:100%;
+	background: #FFF;
+	overflow: hidden;
+}
+.title{
+	width: 800px;
+	height: 80px;
+	margin: 0 auto;
+	color: #797979;
+	margin-bottom: 20px;
+}
+.title hr{
+	margin: 10px auto;
+}
+.title p{
+	text-align: right;
+}
+.title p a{
+	cursor: pointer;
+}
+.title #upmsg{
+	vertical-align: middle;
+}
+#cont{
+	color: #797979;
+	width: 800px;
+	height: 1020px;
+	background: #fff;
+	margin: 0 auto;
+	transition: 1s;
+}
+.msgbox{
+	width: 100%;
+	min-height: 150px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 10px;
+}
+.msgbox a{
+	color: #797979;
+}
+.left{
+	padding: 10px;
+	margin: 10px 0;
+}
+.left img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 1px solid #f0f0f0;
+}
+.msgcont{
+	width: 650px;
+	position: absolute;
+	left: 100px;
+	top: 0;
+	overflow: hidden;
+	border-bottom:1px dotted #aaa ;
+}
+.msgcont p{
+	padding:5px 0;
+	font-size: 14px;
+}
+#form{
+	width: 100%;
+	background: #fff;
+	padding: 10px 0;
+}
+#form hr{
+	width: 800px;
+	height: 25px;
+	margin: 10px auto;
+	background: url(../img/hr.gif);
+	border: none;
+}
+#form>div{
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+#u_email,#u_name,#m_title{
+	width: 228px;
+	height: 50px;
+	color: #797979;
+	padding-left: 10px;
+	background: #f0f0f0;
+	border-radius: 5px;
+}
+#form textarea{
+	margin-top: 10px;
+	width: 600px;
+	height: 80px;
+	resize: none;
+	padding:10px;
+	font-size: 14px;
+	line-height: 25px;
+	color: #797979;
+	background: #f0f0f0;
+	border-radius: 5px;
+	vertical-align: top;
+}
+#submit{
+	margin-top: 10px;
+	width: 100px;
+	height: 100px;
+	background: #f0f0f0;
+	border-radius: 5px;
+	vertical-align: top;
+	transition: 1s;
+	color: #797979;
+	cursor: pointer;
+}
+#submit:hover{
+	background: #aaa;
+	color: #fff;
+}
+#page{
+	width: 800px;
+	height: 30px;
+	text-align: right;
+	line-height: 30px;
+	margin: 10px auto;
+}
+#page ul li{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 10px;
+	transition: 0.5s;
+	margin: 0 5px;
+	display: inline-block;
+}
+#page ul li:hover{
+	background: #f0f0f0;
+}
+#page .up,#page .down{
+	width: 60px;
+}
+.active{
+	background: #f0f0f0;
+}
+/*blockquote引用样式*/
+blockquote{
+	padding-left: 10px;
+	color: #707070;
+	height: 30px;
+	margin: 5px 0;
+	line-height: 30px;
+	font-size: 14px;
+	border-left: 5px solid #A7DBD8;
+	background: rgba(0,0,0,0.1);
+}

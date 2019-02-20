@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/commen.css" />
+		<link rel="stylesheet" type="text/css" href="css/web.css"/>
+		<link rel="stylesheet" type="text/css" href="css/msg.css" />
+	</head>
+	<body>
+		<iframe src="header.html" width="100%" frameborder="0" height="400px" scrolling="no" style="display:block;"></iframe>
+		<div id="content">
+			<div class="title">
+				<h2>留言板</h2>
+				<hr>
+				<p><a onclick="downmsg()" id="downmsg">折叠留言</a><img src="img/up.png" id="upmsg"></p>
+			</div>
+			<div id="cont">
+				<h3><span id="msg">XXX<span>条留言</h3>
+				<div class="msgbox">
+					<div class="left">
+						<img src="img/touxiang.jpg">
+					</div>
+					<div class="msgcont">
+						<h4>user_name</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi reprehenderit odit officia quo aut neque
+							veritatis dicta hic quasi perferendis vero ipsam debitis vel doloribus facere voluptas atque. Similique at.
+						</p>
+						<p><small>2018-12-11 <a href="">回复</a></small></p>
+					</div>
+				</div>
+				<div class="msgbox">
+					<div class="left">
+						<img src="img/touxiang.jpg">
+					</div>
+					<div class="msgcont">
+						<h4>user_name</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi reprehenderit odit officia quo aut neque
+							veritatis dicta hic quasi perferendis vero ipsam debitis vel doloribus facere voluptas atque. Similique at.
+						</p>
+						<p><small>2018-12-11 <a href="">回复</a></small></p>
+					</div>
+				</div>
+				<div class="msgbox">
+					<div class="left">
+						<img src="img/touxiang.jpg">
+					</div>
+					<div class="msgcont">
+						<h4>user_name</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi reprehenderit odit officia quo aut neque
+							veritatis dicta hic quasi perferendis vero ipsam debitis vel doloribus facere voluptas atque. Similique at.
+						</p>
+						<p><small>2018-12-11 <a href="">回复</a></small></p>
+					</div>
+				</div>
+				<div class="msgbox">
+					<div class="left">
+						<img src="img/touxiang.jpg">
+					</div>
+					<div class="msgcont">
+						<h4>user_name</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi reprehenderit odit officia quo aut neque
+							veritatis dicta hic quasi perferendis vero ipsam debitis vel doloribus facere voluptas atque. Similique at.
+						</p>
+						<p><small>2018-12-11 <a href="">回复</a></small></p>
+					</div>
+				</div>
+				<div class="msgbox">
+					<div class="left">
+						<img src="img/touxiang.jpg">
+					</div>
+					<div class="msgcont">
+						<h4>user_name</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi reprehenderit odit officia quo aut neque
+							veritatis dicta hic quasi perferendis vero ipsam debitis vel doloribus facere voluptas atque. Similique at.
+						</p>
+						<p><small>2018-12-11 <a href="">回复</a></small></p>
+					</div>
+				</div>
+				<div class="msgbox">
+					<div class="left">
+						<img src="img/touxiang.jpg">
+					</div>
+					<div class="msgcont">
+						<h4>user_name</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi reprehenderit odit officia quo aut neque
+							veritatis dicta hic quasi perferendis vero ipsam debitis vel doloribus facere voluptas atque. Similique at.
+						</p>
+						<p><small>2018-12-11 <a href="">回复</a></small></p>
+					</div>
+				</div>
+				<div id="page">
+					<ul>
+						<li class="up">上一页</li>
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li class="down">下一页</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div id="form">
+			<hr>
+			<div>
+				<input type="text" name="m_name" id="u_name" placeholder="昵称:" onblur="nameCheck()" onfocus="namePrompt()"/>
+				<input type="text" name="m_email" id="u_email" placeholder="邮箱:" onblur="emailCheck()" onfocus="emailPrompt()"/>
+				<input type="text" name="m_title" id="m_title" placeholder="标题:" onblur="titleCheck()" onfocus="titlePrompt()"/>
+				<textarea name="m_cont" id="m_cont" placeholder="留下你的足迹:" onblur="contCheck()" onfocus="contPrompt()"></textarea>
+				<input type="button"  id="submit" onclick="subMsg()" value="biu~" />
+			</div>
+		</div>
+		<iframe src="bottom.html" width="100%" frameborder="0" height="400px" scrolling="no" style="display:block;"></iframe>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

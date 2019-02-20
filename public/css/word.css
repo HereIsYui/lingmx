@@ -1,0 +1,15 @@
+#content #cont{
+	width: 800px;
+	min-height: 800px;
+	margin: 20px auto; 
+}
+#cont p{
+	margin: 10px auto;
+}
+#cont a{
+	transition: 0.5s;
+	color:#797979;
+}
+#cont a:hover{
+	color:#F8962E;
+}
