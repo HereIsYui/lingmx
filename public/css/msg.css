@@ -4,113 +4,64 @@ body{
 	font-family: '幼圆';
 }
 #content{
-	width:100%;
 	background: #FFF;
 	overflow: hidden;
 }
 .title{
-	width: 800px;
-	height: 80px;
-	margin: 0 auto;
+	height: 5rem;
 	color: #797979;
-	margin-bottom: 20px;
 }
-.title hr{
-	margin: 10px auto;
-}
-.title p{
-	text-align: right;
-}
+
 .title p a{
 	cursor: pointer;
 }
-.title #upmsg{
-	vertical-align: middle;
-}
 #cont{
 	color: #797979;
-	width: 800px;
-	height: 1020px;
-	background: #fff;
-	margin: 0 auto;
 	transition: 1s;
 }
 .msgbox{
-	width: 100%;
-	min-height: 150px;
+	min-height: 9.375rem;
 	overflow: hidden;
-	position: relative;
-	margin-top: 10px;
-}
-.msgbox a{
-	color: #797979;
-}
-.left{
-	padding: 10px;
-	margin: 10px 0;
 }
 .left img{
-	width: 50px;
-	height: 50px;
+	width: 3.125rem;
+	height: 3.125rem;
 	border-radius: 50%;
-	border: 1px solid #f0f0f0;
+	border: 0.0625rem solid #dfdfdf;
 }
 .msgcont{
-	width: 650px;
-	position: absolute;
-	left: 100px;
-	top: 0;
 	overflow: hidden;
-	border-bottom:1px dotted #aaa ;
+	border-bottom:0.0625rem dotted #aaa ;
+}
+.msgcont h4{
+	font-size:1.125rem;
 }
 .msgcont p{
-	padding:5px 0;
 	font-size: 14px;
-}
-#form{
-	width: 100%;
-	background: #fff;
-	padding: 10px 0;
 }
 #form hr{
-	width: 800px;
-	height: 25px;
-	margin: 10px auto;
+	height: 1.5625rem;
 	background: url(../img/hr.gif);
-	border: none;
-}
-#form>div{
-	width: 800px;
-	margin: 0 auto;
-	text-align: center;
 }
 #u_email,#u_name,#m_title{
-	width: 228px;
-	height: 50px;
+	height: 3.125rem;
 	color: #797979;
-	padding-left: 10px;
 	background: #f0f0f0;
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 }
 #form textarea{
-	margin-top: 10px;
-	width: 600px;
-	height: 80px;
+	height: 5rem;
 	resize: none;
-	padding:10px;
 	font-size: 14px;
-	line-height: 25px;
+	line-height: 1.5625rem;
 	color: #797979;
 	background: #f0f0f0;
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 	vertical-align: top;
 }
 #submit{
-	margin-top: 10px;
-	width: 100px;
-	height: 100px;
 	background: #f0f0f0;
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 	vertical-align: top;
 	transition: 1s;
 	color: #797979;
@@ -121,27 +72,20 @@ body{
 	color: #fff;
 }
 #page{
-	width: 800px;
-	height: 30px;
+	height: 1.875rem;
 	text-align: right;
-	line-height: 30px;
-	margin: 10px auto;
+	line-height: 1.875rem;
 }
 #page ul li{
-	width: 30px;
-	height: 30px;
 	cursor: pointer;
-	text-align: center;
-	border-radius: 10px;
+	border-radius: 0.625rem;
 	transition: 0.5s;
-	margin: 0 5px;
-	display: inline-block;
 }
 #page ul li:hover{
 	background: #f0f0f0;
 }
 #page .up,#page .down{
-	width: 60px;
+	width: 3.75rem;
 }
 .active{
 	background: #f0f0f0;
@@ -150,10 +94,8 @@ body{
 blockquote{
 	padding-left: 10px;
 	color: #707070;
-	height: 30px;
-	margin: 5px 0;
-	line-height: 30px;
-	font-size: 14px;
-	border-left: 5px solid #A7DBD8;
+	line-height: 1.875rem;
+	font-size: 0.875rem;
+	border-left: 0.3125rem solid #A7DBD8;
 	background: rgba(0,0,0,0.1);
 }

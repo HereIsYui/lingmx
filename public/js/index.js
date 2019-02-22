@@ -1,31 +1,33 @@
 window.onload=function(){
-	//setTimeout('seyHello()',500);
+	setTimeout('seyHello()',500);
 }
 function $(id){
 	return document.getElementById(id);
 }
 //打开首页时的弹出层
 function seyHello(){
-	var height=window.innerHeight;
-	$('hello').style.cssText='height: '+height+'px;padding-top:'+height/3+'px;';
-	if(newDate()<=5){
-		$('hello').innerHTML='深夜了<p>'+jitang()+'</p>';
-	}else if(newDate()<=8){
-		$('hello').innerHTML='早上好，朋友<p>'+jitang()+'</p>';
-	}else if(newDate()<=11){
-		$('hello').innerHTML='上午好，朋友<p>'+jitang()+'</p>';
-	}else if(newDate()<=14){
-		$('hello').innerHTML='中午好，朋友<p>'+jitang()+'</p>';
-	}else if(newDate()<=18){
-		$('hello').innerHTML='下午好，朋友<p>'+jitang()+'</p>';
-	}else if(newDate()<=22){
-		$('hello').innerHTML='晚上好，朋友<p>'+jitang()+'</p>';
-	}else if(newDate()<=23){
-		$('hello').innerHTML='夜已深，记得早点睡觉，朋友';
+	if(window.innerWidth>767){
+		var height=window.innerHeight;
+		$('hello').style.cssText='height: '+height+'px;padding-top:'+height/3+'px;';
+		if(newDate()<=5){
+			$('hello').innerHTML='深夜了<p>'+jitang()+'</p>';
+		}else if(newDate()<=8){
+			$('hello').innerHTML='早上好，朋友<p>'+jitang()+'</p>';
+		}else if(newDate()<=11){
+			$('hello').innerHTML='上午好，朋友<p>'+jitang()+'</p>';
+		}else if(newDate()<=14){
+			$('hello').innerHTML='中午好，朋友<p>'+jitang()+'</p>';
+		}else if(newDate()<=18){
+			$('hello').innerHTML='下午好，朋友<p>'+jitang()+'</p>';
+		}else if(newDate()<=22){
+			$('hello').innerHTML='晚上好，朋友<p>'+jitang()+'</p>';
+		}else if(newDate()<=23){
+			$('hello').innerHTML='夜已深，记得早点睡觉，朋友';
+		}
+		setTimeout(()=>$('hello').style.cssText+="opacity: 1;",1000);
+		setTimeout(()=>$('hello').style.cssText+="opacity: 0;",2500);
+		setTimeout(()=>$('hello').style.cssText="display:none",3500);
 	}
-	setTimeout(()=>$('hello').style.cssText+="opacity: 1;",1000);
-	setTimeout(()=>$('hello').style.cssText+="opacity: 0;",2500);
-	setTimeout(()=>$('hello').style.cssText="display:none",3500);
 }
 //获取当前的时间
 function newDate(){

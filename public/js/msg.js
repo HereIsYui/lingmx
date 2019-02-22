@@ -4,6 +4,8 @@ function $(id) {
 //当网页加载完成后执行
 window.onload=function(){
 	getMsg(1);//加载留言
+	var msgheight=$("cont").getAttribute("data-height");
+	$('cont').style.height = `${msgheight}px`;
 }
 //ajax兼容代码
 function createXhr() {
@@ -22,7 +24,8 @@ function downmsg() {
 		$('downmsg').innerHTML = "展开留言";
 		$('upmsg').src = 'img/down.png';
 	}else {
-		$('cont').style.height = '1020px';
+		var msgheight=$("cont").getAttribute("data-height");
+		$('cont').style.height = `${msgheight}px`;
 		$('downmsg').innerHTML = "折叠留言";
 		$('upmsg').src = 'img/up.png';
 	}
@@ -49,15 +52,15 @@ function getMsg(currentPage) {
 			//遍历数据并添加到div中
 			for (var i = 0; i < data.length; i++) {
 				var msg = data[i];
-				div += '<div class="msgbox">';
-				div += '<div class="left">';
-				div += '<img src="' + touXiang(msg.m_name) + '">'
-				div += '</div>';
-				div += '<div class="msgcont">';
-				div += '<h4>' + msg.m_title +'<small>——'+msg.m_name + '</small></h4>';
-				div += msg.m_cont;
-				div += '<p><small>' + msg.m_date + '<a href="">回复</a>' + '</small></p>';
-				div += '</div>';
+				div += `<div class="row r-0 msgbox mt-2">`;
+					div += `<div class="col-2 left p-3 mt-3 mb-3 text-center">`;
+						div += '<img src="' + touXiang(msg.m_name) + '">';
+					div += '</div>';
+					div += `<div class="col-10 msgcont">`;
+						div += '<h4>' + msg.m_title +'<small>——'+msg.m_name + '</small></h4>';
+						div += '<p class="pt-1 pb-1">'+msg.m_cont+'</p>';
+						div += '<p><small>' + msg.m_date + '<a href="">回复</a>' + '</small></p>';
+					div += '</div>';
 				div += '</div>';
 			}
 			//把结果放到cont中
@@ -86,6 +89,9 @@ function getMsg(currentPage) {
 			}
 			pageHTML += "</ul>";
 			$('page').innerHTML = pageHTML;
+			var msgHeight=$("cont").clientHeight;
+			$("cont").setAttribute("data-height",msgHeight);
+			console.log(msgHeight);
 		}
 	}
 	xhr.send(null);

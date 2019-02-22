@@ -1,7 +1,5 @@
 #content #cont{
-	width: 800px;
-	min-height: 800px;
-	margin: 20px auto; 
+	min-height: 50rem;
 }
 #cont p{
 	margin: 10px auto;

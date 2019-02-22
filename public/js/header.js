@@ -8,4 +8,12 @@ window.onload=function(){
 	$('pr1').style.cssText='d: path("M 100 0 L 50 50 L 100 100");';
 	$('pr2').style.cssText='d: path("M 100 100 L 50 50 L 100 33.3");';
 	$('pr3').style.cssText='d: path("M 100 100 L 50 50 L 100 66.6");';
+	changeHight();
+};
+function changeHight(){
+	$("header").style.height=$("header").children[0].scrollHeight+"px";
 }
+window.onresize=function(){
+	changeHight();
+};
+

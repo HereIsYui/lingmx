@@ -1,73 +1,76 @@
-#header{
+#header {
 	width: 100%;
-	height: 400px;
 	font-family: '幼圆';
-	border: 1px solid transparent; 
 }
-.admin{
-	width: 30px;
-	margin: 20px;
+.admin {
+	width: 1.875rem;
+	margin: 1.25rem;
 	cursor: pointer;
 	float: right;
 }
-.search{
-	width: 30px;
-	margin: 20px;
+.search {
+	width: 1.875rem;
+	margin: 1.25rem;
 	cursor: pointer;
 	float: left;
 }
 /*顶部导航*/
-#nav{
-	width: 800px;
-	height: 80px;
-	margin: 120px auto 0;
+#nav {
+	width: 100%;
+	height: 5rem;
 	text-align: center;
 	transition: 0.5s;
 	position: relative;
 	cursor: pointer;
 	transform-style: preserve-3d;
 }
-#logo,#nav_bir{
-	width: 800px;
-	height: 80px;
+#nav_bir {
+	width: 100%;
+	height: 5rem;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-#logo{
-	transform: rotateX(0) translateZ(40px);
+#logo {
+	width: 100%;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-
-#nav:hover{
+#logo {
+	transform: rotateX(0) translateZ(2.5rem);
+}
+#nav:hover {
 	transform: rotateX(-90deg);
 }
-#logo img{
-	border: 1px solid transparent;
+#logo img {
+	border: 0.0625rem solid transparent;
 }
-#logo p{
-	color:#fff;
+#logo p {
+	color: #fff;
 }
-#nav_bir{
-	transform: rotateX(90deg) translateZ(40px);
+#nav_bir {
+	transform: rotateX(90deg) translateZ(2.5rem);
 }
-#nav_bir ul li{
-	width: 100px;
-	height: 80px;
-	line-height: 100px;
+#nav_bir ul li {
+	width: 6.25rem;
+	height: 5rem;
+	line-height: 6.25rem;
 	position: relative;
 	display: inline-block;
 }
-#nav_bir ul li a{
-	width: 100px;
-	height: 80px;
-	color:#fff;
+#nav_bir ul li a {
+	width: 6.25rem;
+	height: 5rem;
+	color: #fff;
 	transition: 0.5s;
 	display: inline-block;
 }
-#nav_bir ul li a:hover{
-	color:#f8962e;
+#nav_bir ul li a:hover {
+	color: #f8962e;
 }
-#nav_bir ul li::before{
+#nav_bir ul li::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -76,16 +79,16 @@
 	height: 100%;
 	transition: 0.5s;
 	z-index: -1;
-	border-bottom: 2px solid #fff;
+	border-bottom: 0.125rem solid #fff;
 }
-#nav_bir ul li:hover::before{
+#nav_bir ul li:hover::before {
 	width: 100%;
 	left: 0;
 }
-#nav_bir ul li:hover ~ li::before {
-    left: 0;
+#nav_bir ul li:hover~li::before {
+	left: 0;
 }
-#header svg{
+#header svg {
 	width: 100%;
-	height: 200px;
+	height: 10rem;
 }

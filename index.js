@@ -9,7 +9,7 @@ const wordRouter=require('./routers/wordRouter.js');
 //创建web服务器
 var server=express();
 //监听端口
-server.listen(8888,()=>{
+server.listen(6688,()=>{
 	console.log('启动了！！！');
 });
 //托管静态资源到public

@@ -1,35 +1,42 @@
 #foot{
-	width: 100%;
-	height: 400px;
 	text-align: center;
 	font-family: '幼圆';
 }
 /* 底部 */
-#foot>svg{
-	width: 100%;
-	height: 200px;
-}
-#foot .foot_copy{
-	color: #fff;
-}
 .foot_copy ul li{
-	width: 70px;
-	height: 70px;
-	margin: 0 20px;
-	margin-bottom: 20px;
+	width: 4.375rem;
+	height: 4.375rem;
 	border-radius: 50%;
 	border: 1px solid #c0c0c0;
 	transition: 0.8s;
-	line-height: 70px;
+	line-height: 4.375rem;
 	background: url(../img/huaji1.png) no-repeat;
 	display: inline-block;
 }
 .foot_copy ul li:hover{
-	width: 70px;
-	height: 70px;
+	width: 4.375rem;
+	height: 4.375rem;
 	color: rgba(0,0,0,0);
 	border-radius: 50%;
 	cursor: pointer;
-	border: 1px solid transparent;
+	border: 0.0625rem solid transparent;
 	background: url(../img/huaji.png) no-repeat;
+}
+@media screen and (max-width: 767px) {
+	#foot>svg {
+		width: 100%;
+		height: 6rem;
+	}
+}
+@media screen and (min-width: 768px) and (max-width:991px) {
+	#foot>svg {
+		width: 100%;
+		height: 10rem;
+	}
+}
+@media screen and (min-width: 992px) {
+	#foot>svg {
+		width: 100%;
+		height: 12.5rem;
+	}
 }

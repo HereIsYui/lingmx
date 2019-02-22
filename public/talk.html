@@ -3,27 +3,47 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="css/commen.css"/>
 		<link rel="stylesheet" type="text/css" href="css/web.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</head>
 	<body onload="getWord(1,2)">
-		<iframe src="header.html" width="100%" frameborder="0" height="400px" scrolling="no" style="display:block;"></iframe>
-		<div id="content">
-			<div class="title">
-				<h2>闲文杂谈</h2>
-				<hr>
-				<p>共计：<span id='wed'></span>篇</p>
+		<div class="container-fluid p-0">
+			<div class="row m-0">
+				<div class="col-12 p-0">
+					<iframe src="header.html" width="100%" frameborder="0" onload="changeFrameHight()" id="hIframe" scrolling="no" style="display:block;"></iframe>
+				</div>
 			</div>
-			<div id="cont">
-				<div class="cont_word">
-					<a class="cont_a" href=""><span class="cont_y">原</span>浅谈CSS</a>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit odit ipsa consequuntur. Sunt rem atque necessitatibus hic praesentium quae nostrum delectus quos inventore soluta voluptates ad. Odio molestias similique tempore!
-					</p>
+			<div class="row m-0 bg-white">
+				<div id="content" class="w-100 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+					<div class="title mt-2">
+						<h2>闲文杂谈</h2>
+						<hr class="mt-2 mb-2">
+						<p class="text-right mb-2">共计: <span id="wed"></span>篇</p>
+					</div>
+				</div>
+			</div>	
+			<div class="row m-0 bg-white">
+				<div id="cont" class="w-100 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+					<div class="cont_word p-2 w-100 mt-2">
+						<a class="cont_a" href=""><span class="cont_y ml-2 mr-2">原</span>否头笑谱——金属拉丝效果</a>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit odit ipsa consequuntur. Sunt rem atque necessitatibus hic praesentium quae nostrum delectus quos inventore soluta voluptates ad. Odio molestias similique tempore!
+						</p>
+					</div>
+				</div>
+			</div>	
+			
+			<div class="row m-0">
+				<div class="col-12 p-0">
+					<iframe src="bottom.html" width="100%" frameborder="0" id="hIframe2" onload="changeFrameHight()" scrolling="no" style="display:block;"></iframe>
 				</div>
 			</div>
 		</div>
-		<iframe src="bottom.html" width="100%" frameborder="0" height="400px" scrolling="no" style="display:block;"></iframe>
 		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

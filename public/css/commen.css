@@ -1,3 +1,23 @@
+/*自定义bootstrap样式*/
+@media screen and (max-width: 767px) {
+	.col-0 {
+		display: none;
+	}
+}
+@media screen and (min-width: 768px) and (max-width:991px) {
+	.col-sm-0 {
+		display: none;
+	}
+}
+@media screen and (min-width: 992px) {
+	.col-lg-0 {
+		display: none;
+	}
+}
+.w-70{
+	 width: 70% !important;
+}
+/*共用样式*/
 h1,h2,h3,h4,h5,h6,ul,ol,p,pre,hr,body,iframe,blockquote{
 	margin: 0;
 	padding: 0;
@@ -6,183 +26,255 @@ ul,ol{
 	list-style: none;
 }
 a,u{
+	color: inherit;
 	text-decoration: none;
 }
 input,button,textarea{
 	border: none;
 	outline: none;
 }
-path{
+a:hover {
+	color:#f8962e;
+	text-decoration: none;
+}
+
+path {
 	transition: 1.5s;
 }
-.cont_p{
-	color: #aaa;
-	margin-top: 10px;
+body{
+	background: transparent;
 }
-.cont_a{
+.cont_p {
+	color: #aaa;
+	margin-top: 0.625rem;
+}
+
+.cont_a {
 	color: #797979;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 1.25rem;
 	transition: 0.5s;
 }
-.write{
+
+.write {
 	color: #fff;
-	text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+	text-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.1);
 }
+
 /*登录样式*/
-#loadIn,#search{
+#loadIn,
+#search {
 	width: 100%;
 	height: 0;
 	position: fixed;
 	top: 0;
 	left: 0;
 	color: #fff;
-	background: rgba(0,0,0,0.6);
+	background: rgba(0, 0, 0, 0.6);
 	z-index: 9900;
 	opacity: 0;
 	transition: 0.5s;
 	text-align: center;
 	overflow: hidden;
 }
-#load_form{
-	width: 300px;
-	height: 350px;
+
+#load_form {
+	width: 18.75rem;
+	height: 21.875rem;
 	background: #fff;
 	margin: 0 auto;
-	line-height: 30px;
-	border-radius: 5px;
+	line-height: 1.875rem;
+	border-radius: 0.3125rem;
 }
-#load_form input{
-	width: 200px;
-	height: 50px;
-	line-height: 50px;
-	border-radius: 5px;
-	margin:10px auto;
-	padding-left: 10px;
-	background:#f0f0f0 ;
+
+#load_form input {
+	width: 12.5rem;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	border-radius: 0.3125rem;
+	margin: 0.625rem auto;
+	padding-left: 0.625rem;
+	background: #f0f0f0;
 }
-#load_form>div{
+
+#load_form>div {
 	width: 100%;
-	height: 50px;
+	height: 3.125rem;
 	text-align: right;
 }
-#load_form>div img{
-	width: 20px;
-	height: 20px;
+
+#load_form>div img {
+	width: 1.25rem;
+	height: 1.25rem;
 	cursor: pointer;
-	margin: 10px;
+	margin: 0.625rem;
 }
-#load_form h3{
-	font-size: 20px;
+
+#load_form h3 {
+	font-size: 1.25rem;
 	color: #797979;
 }
-#load_form span{
+
+#load_form span {
 	color: red;
-	font-size: 14px;
+	font-size: 0.875rem;
 }
-#load_form .form_btn{
+
+#load_form .form_btn {
 	color: #fff;
 	cursor: pointer;
 	background: #F8962E;
 	transition: 1s;
 }
-#load_form .form_btn:hover{
+
+#load_form .form_btn:hover {
 	background: yellowgreen;
 }
+
 /*搜索样式*/
-#search #search_cont{
-	width: 570px;
-	height: 55px;
+#search #search_cont {
+	width: 80%;
+	height: 3.4375rem;
 	margin: 0 auto;
-	border: 2px solid #f8f8f8;
-	border-radius: 50px;
+	border: 0.125rem solid #f8f8f8;
+	border-radius: 3.125rem;
 }
-#search input{
-	width: 480px;
-	height: 55px;
-	line-height: 50px;
-	padding-left: 20px;
-	font-size: 25px;
-	background: rgba(0,0,0,0);
+
+#search input {
+	width: 80%;
+	height: 3.4375rem;
+	line-height: 3.125rem;
+	padding-left: 1.25rem;
+	font-size: 1.5625rem;
+	background: rgba(0, 0, 0, 0);
 	color: #fff;
 }
-#search img{
+#search img {
 	vertical-align: middle;
 	position: relative;
-    left: 5px;
-    top: -5px;
-    cursor: pointer;
+	left: 0.3125rem;
+	top: -0.3125rem;
+	cursor: pointer;
 }
+
 /*右侧边栏*/
-#left_nav{
-	width: 80px;
-	height: 380px;
+#left_nav {
+	width: 5rem;
+	height: 23.75rem;
 	position: fixed;
 	right: 10%;
-	top: 300px;
+	top: 18.75rem;
 	display: none;
 	opacity: 0;
-	transition:0.5s;
+	transition: 0.5s;
 }
-#left_nav ul li{
-	width: 50px;
-	height: 50px;
+
+#left_nav ul li {
+	width: 3.125rem;
+	height: 3.125rem;
 	text-align: center;
-	line-height: 40px;
-	margin: 10px auto;
+	line-height: 2.5rem;
+	margin: 0.625rem auto;
 	cursor: pointer;
 	transition: 0.5s;
 	position: relative;
 	transform-style: preserve-3d;
 }
-#left_nav ul li a{
-	width: 100px;
-	height: 50px;
+
+#left_nav ul li a {
+	width: 6.25rem;
+	height: 3.125rem;
 	color: #fff;
 }
-#left_nav .img_front,#left_nav .img_bottom{
-	width: 50px;
-	height: 50px;
-	border-radius: 5px;
+
+#left_nav .img_front,
+#left_nav .img_bottom {
+	width: 3.125rem;
+	height: 3.125rem;
+	border-radius: 0.3125rem;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-#left_nav .img_bottom{
+
+#left_nav .img_bottom {
 	background: #F8962E;
-	transform: rotateX(-90deg) translateZ(25px);
+	transform: rotateX(-90deg) translateZ(1.5625rem);
 }
-#left_nav .img_front{
-	background: #f8f8f8;	
-	transform: rotateX(0) translateZ(25px);
+
+#left_nav .img_front {
+	background: #f8f8f8;
+	transform: rotateX(0) translateZ(1.5625rem);
 }
-#left_nav ul li:hover{
+
+#left_nav ul li:hover {
 	transform: rotateX(90deg);
 }
-#left_nav ul li:hover .left_msg{
+
+#left_nav ul li:hover .left_msg {
 	opacity: 1;
-	left: 60px;
+	left: 3.75rem;
 }
-#left_nav .to_top{
-	width: 50px;
-	height: 50px;
+
+#left_nav .to_top {
+	width: 3.125rem;
+	height: 3.125rem;
 	line-height: 50px;
 }
-#left_nav img{
-	width: 35px;
+
+#left_nav img {
+	width: 2.1875rem;
 	vertical-align: middle;
 }
-#left_nav .left_msg{
-	width: 90px;
-	height: 40px;
-	line-height: 40px;
-	border-radius: 5px;
+
+#left_nav .left_msg {
+	width: 5.625rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	border-radius: 0.3125rem;
 	opacity: 0;
 	transition: 0.5s;
 	background: #F8962E;
 	color: #fff;
-	transition-delay:0.3s;
+	transition-delay: 0.3s;
 	position: absolute;
-	left: 20px;
-	top: 5px;
+	left: 1.25rem;
+	top: 0.3125rem;
+}
+/*menu样式*/
+#menu{
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	position:fixed;
+	display: none;
+	top: 0;
+	z-index: 9900;
+	transition: 1s;
+	background: rgba(0,0,0,0.3);
+}
+.menuCont{
+	position: relative;
+	left:-12.5rem;
+	width: 12.5rem;
+	height: 100%;
+	transition: 0.5s;
+	background: #555;
+}
+.menuCont a,.menuCont li{
+	display:block;
+	width: 100%;
+	height: 3.75rem;
+	text-align: center;
+	transition: 0.5s;
+	line-height: 3.75rem;
+	cursor: pointer;
+	font-size:1.25rem;
+}
+.menuCont li:hover a{
+	color:#f8962e;
+}
+.menuCont img{
+	width: 1.5625rem;
+	vertical-align: middle;
 }
