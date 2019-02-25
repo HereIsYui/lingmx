@@ -4,8 +4,6 @@ function $(id) {
 //当网页加载完成后执行
 window.onload=function(){
 	getMsg(1);//加载留言
-	var msgheight=$("cont").getAttribute("data-height");
-	$('cont').style.height = `${msgheight}px`;
 }
 //ajax兼容代码
 function createXhr() {
@@ -89,9 +87,11 @@ function getMsg(currentPage) {
 			}
 			pageHTML += "</ul>";
 			$('page').innerHTML = pageHTML;
+			$("cont").removeAttribute("style");
 			var msgHeight=$("cont").clientHeight;
 			$("cont").setAttribute("data-height",msgHeight);
 			console.log(msgHeight);
+			$('cont').style.height = `${msgHeight}px`;
 		}
 	}
 	xhr.send(null);

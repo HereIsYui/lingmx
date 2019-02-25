@@ -18,6 +18,7 @@ body{
 #cont{
 	color: #797979;
 	transition: 1s;
+	overflow: hidden;
 }
 .msgbox{
 	min-height: 9.375rem;
