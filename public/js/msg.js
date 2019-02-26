@@ -2,9 +2,9 @@ function $(id) {
 	return document.getElementById(id);
 }
 //当网页加载完成后执行
-window.onload=function(){
-	getMsg(1);//加载留言
-}
+(function(){
+	getMsg(1)
+})()
 //ajax兼容代码
 function createXhr() {
 	var xhr = null;

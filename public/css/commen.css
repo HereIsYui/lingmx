@@ -3,15 +3,27 @@
 	.col-0 {
 		display: none;
 	}
+	#foot>svg {
+		width: 100%;
+		height: 6rem;
+	}
 }
 @media screen and (min-width: 768px) and (max-width:991px) {
 	.col-sm-0 {
 		display: none;
 	}
+	#foot>svg {
+		width: 100%;
+		height: 10rem;
+	}
 }
 @media screen and (min-width: 992px) {
 	.col-lg-0 {
 		display: none;
+	}
+	#foot>svg {
+		width: 100%;
+		height: 12.5rem;
 	}
 }
 .w-70{
@@ -277,4 +289,121 @@ body{
 .menuCont img{
 	width: 1.5625rem;
 	vertical-align: middle;
+}
+/*导航栏样式*/
+/*-----头部样式------*/
+#header {
+	width: 100%;
+	font-family: '幼圆';
+}
+.admin {
+	width: 1.875rem;
+	margin: 1.25rem;
+	cursor: pointer;
+	float: right;
+}
+.search {
+	width: 1.875rem;
+	margin: 1.25rem;
+	cursor: pointer;
+	float: left;
+}
+/*顶部导航*/
+#nav {
+	width: 100%;
+	height: 5rem;
+	text-align: center;
+	transition: 0.5s;
+	position: relative;
+	cursor: pointer;
+	transform-style: preserve-3d;
+}
+#nav_bir {
+	width: 100%;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotateX(90deg) translateZ(2.5rem);
+}
+#logo {
+	width: 100%;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotateX(0) translateZ(2.5rem);
+}
+#nav:hover {
+	transform: rotateX(-90deg);
+}
+#logo img {
+	border: 0.0625rem solid transparent;
+}
+#logo p {
+	color: #fff;
+}
+#nav_bir ul li {
+	width: 6.25rem;
+	height: 5rem;
+	line-height: 6.25rem;
+	position: relative;
+	display: inline-block;
+}
+#nav_bir ul li a {
+	width: 6.25rem;
+	height: 5rem;
+	color: #fff;
+	transition: 0.5s;
+	display: inline-block;
+}
+#nav_bir ul li a:hover {
+	color: #f8962e;
+}
+#nav_bir ul li::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 0;
+	height: 100%;
+	transition: 0.5s;
+	z-index: -1;
+	border-bottom: 0.125rem solid #fff;
+}
+#nav_bir ul li:hover::before {
+	width: 100%;
+	left: 0;
+}
+#nav_bir ul li:hover~li::before {
+	left: 0;
+}
+#header svg {
+	width: 100%;
+	height: 10rem;
+}
+/*-----底部样式-----*/
+#foot{
+	text-align: center;
+	font-family: '幼圆';
+}
+/* 底部 */
+.foot_copy ul li{
+	width: 4.375rem;
+	height: 4.375rem;
+	border-radius: 50%;
+	border: 1px solid #c0c0c0;
+	transition: 0.8s;
+	line-height: 4.375rem;
+	background: url(../img/huaji1.png) no-repeat;
+	display: inline-block;
+}
+.foot_copy ul li:hover{
+	width: 4.375rem;
+	height: 4.375rem;
+	color: rgba(0,0,0,0);
+	border-radius: 50%;
+	cursor: pointer;
+	border: 0.0625rem solid transparent;
+	background: url(../img/huaji.png) no-repeat;
 }

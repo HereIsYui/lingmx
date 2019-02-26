@@ -61,6 +61,7 @@ body{
 	vertical-align: top;
 }
 #submit{
+	min-height: 3rem;
 	background: #f0f0f0;
 	border-radius: 0.3125rem;
 	vertical-align: top;

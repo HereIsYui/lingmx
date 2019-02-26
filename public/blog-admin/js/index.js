@@ -5,6 +5,8 @@ window.onload=function(){
 	getInfo();
 	getWordList(1);
 	getMsgList(1,15);
+	addMenu();
+	changeCount(0);
 	$('pl1').style.cssText='d: path("M 0 0 L 50 50 L 0 100");';
 	$('pl2').style.cssText='d: path("M 0 100 L 50 50 L 0 33.3");';
 	$('pl3').style.cssText='d: path("M 0 100 L 50 50 L 0 66.6");';
@@ -15,10 +17,57 @@ window.onload=function(){
 //导航栏方法
 function changeCount(i){
 	$('cont_list').style.cssText = 'transform: rotateY(' + i + 'deg);';
+	$('cont_list').setAttribute("data-rotateY",i);
 	if($('nwTitle').value){$('nwTitle').value=''; $('nwTitle').style.color='#797979';};
 	if($('nwCont').value){$('nwCont').value='';};
+	changeHeight();
 }
+window.onresize=changeHeight;
 
+function changeHeight(){
+	var thisHight=$('cont_list').getAttribute("data-rotateY");
+	$("content").removeAttribute("style");
+	switch (thisHight){
+		case '0':
+			$("content").style.height=$("cont1").offsetHeight+"px";
+			break;
+		case '-90':
+			$("content").style.height=$("cont2").offsetHeight+"px";
+			break;
+		case '-180':
+			$("content").style.height=$("cont3").offsetHeight+"px";
+			break;
+		case '-270':
+			$("content").style.height=$("cont4").offsetHeight+"px";
+			break;
+	}
+	
+}
+function addMenu(){
+	if($('menu') == null){
+		var html=`<div id="menu">
+			<div class="menuCont">
+				<ul>
+					<li><a href="javascript:changeCount(0)">后台主页</a></li>
+					<li><a href="javascript:changeCount(-90)">新建文章</a></li>
+					<li><a href="javascript:changeCount(-180)">编辑文章</a></li>
+					<li><a href="javascript:changeCount(-270)">编辑留言</a></li>
+					<li><a href="../index.html">返回博客</a></li>
+				</ul>
+			</div>
+		</div>`
+		document.body.innerHTML+=html;
+	}
+}
+//弹出菜单栏
+function menu(){
+	$("menu").style.display="block";
+	setTimeout(()=>{$("menu").children[0].style.left="0px"},100);
+	$("menu").addEventListener("click",function(){
+		$("menu").children[0].style.left="-12.5rem"
+		setTimeout(()=>{$("menu").style.display="none"},500);
+	})
+}
 //下面是内容区域方法
 //后台首页获取数据方法
 function getInfo(){
@@ -45,7 +94,7 @@ function getInfo(){
 			$('WordCont2').style.cssText='display:block;opacity: 1;';
 			$('WordCont3').style.cssText='display:none;opacity: 0;';
 			$('WordCont4').style.cssText='display:none;opacity: 0;';
-			
+			$("content").style.height=$("content").scrollHeight+"px";
 		}
 	}
 	xhr.send(null);
@@ -117,9 +166,12 @@ function inputHx(i){
 	$('nwCont').value+="<h"+i+"></h"+i+">";//点击添加标题标签
 }
 //隐藏效果显示
-$('showCont').onclick=function(){
-	$('showCont').style.cssText+='opacity:0';
-	setTimeout(()=>{$('showCont').style.cssText+='display:none';},500);
+var $showCont=document.getElementById("showCont");
+console.log($showCont);
+$showCont.onclick=function(){
+	console.log(111);
+	$showCont.style.cssText+='opacity:0';
+	setTimeout(()=>{$showCont.style.cssText+='display:none';},500);
 }
 //提交新的文章
 function subWord(){
@@ -171,7 +223,7 @@ function getWordList(currentPage) {
 			for(var i = 0; i < data.length; i++) {
 				var word = data[i];
 				html+='<tr><td width="40px">'+word.w_id+'</td><td>'+word.w_date+'</td><td>'+word.w_title+'</td><td>'+isAuthor()+'</td>';
-				html+='<td><button onclick="updateWord('+word.w_id+')">修改</button><button onclick="deleteWord('+word.w_id+')">删除</button></td></tr>'
+				html+='<td><button class="btn btn-sm btn-success" onclick="updateWord('+word.w_id+')">修改</button><button class="btn btn-sm btn-danger" onclick="deleteWord('+word.w_id+')">删除</button></td></tr>'
 				function isAuthor() {
 					if(word.w_isAuthor == 1) {
 						return '<span class="cont_y">原创</span>';
@@ -300,8 +352,8 @@ function getMsgList(currentPage,pageSize) {
 			var html = '';
 			for(var i = 0; i < data.length; i++) {
 				var msg = data[i];
-				html+='<tr><td width="40px">'+msg.m_id+'</td><td>'+msg.m_date+'</td><td>'+msg.m_title+'</td><td>'+msg.m_name+'</td><td>'+msg.m_email+'</td>';
-				html+='<td><button onclick="replyMsg('+msg.m_id+')">回复</button><button onclick="deleteMsg('+msg.m_id+')">删除</button></td></tr>'
+				html+='<tr><td width="40px">'+msg.m_id+'</td><td>'+msg.m_date+'</td><td>'+msg.m_title+'</td><td>'+msg.m_name+'</td>';
+				html+='<td><button class="btn btn-sm btn-success" onclick="replyMsg('+msg.m_id+')">回复</button><button class="btn btn-sm btn-danger" onclick="deleteMsg('+msg.m_id+')">删除</button></td></tr>'
 			}
 			$('msgBody').innerHTML = html;
 			var pageHTML = '';

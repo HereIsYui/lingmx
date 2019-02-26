@@ -8,7 +8,7 @@ window.onload=function(){
 }
 function load(){
 	var height=window.innerHeight;
-	$('cont').style.cssText='height:'+height+'px';
+	$('bg').style.cssText='height:'+height+'px';
 	str=cont.substr(0,i);
 	$('cont').innerHTML=str+"_";
 	

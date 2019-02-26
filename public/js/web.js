@@ -1,6 +1,6 @@
 var wordClass=location.search.substr(5);
 var ContTitle=$("content").children[0].children[0];
-console.log(ContTitle);
+
 function $(id){
 	return document.getElementById(id);
 }
@@ -22,7 +22,8 @@ switch (wordClass){
 		ContTitle.innerHTML="U3D记录";
 		break;
 }
-window.onload=function(){
-	getWord(1,wordClass);
-}
+//为onload追加执行的内容
+(function(){
+	getWord(1,wordClass)
+})();
 

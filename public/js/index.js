@@ -1,6 +1,6 @@
 window.onload=function(){
-	setTimeout('seyHello()',500);
-}
+	setTimeout('seyHello()',500)
+}; 
 function $(id){
 	return document.getElementById(id);
 }

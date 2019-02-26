@@ -1,4 +1,5 @@
-function  changeFrameHight(){
+//动态改变iframe高度
+function changeFrameHight(){
 	try{
 		var a=window.frames[0].window.document.body.scrollHeight-2;
 		hIframe.style.height=a+"px";
@@ -6,10 +7,28 @@ function  changeFrameHight(){
 		hIframe2.style.height=b+"px";
 	}catch(e){;}
 }
+//当页面加载完成后执行的函数
+(function(){
+	setTimeout(()=>{
+		$('pl1').style.cssText='d: path("M 0 0 L 50 50 L 0 100");';
+		$('pl2').style.cssText='d: path("M 0 100 L 50 50 L 0 33.3");';
+		$('pl3').style.cssText='d: path("M 0 100 L 50 50 L 0 66.6");';
+		$('pr1').style.cssText='d: path("M 100 0 L 50 50 L 100 100");';
+		$('pr2').style.cssText='d: path("M 100 100 L 50 50 L 100 33.3");';
+		$('pr3').style.cssText='d: path("M 100 100 L 50 50 L 100 66.6");';
+	},100)
+	changeHight();
+})();
+//当窗口大小改变时
 window.onresize=function () {
 	changeFrameHight();
-	addLeftMenu();
-	addMenu();
+	addLeftMenu(); //添加小屏时左侧菜单
+	addMenu(); //添加大屏时右侧菜单
+	changeHight(); //设置header的高度
+}
+//动态设置header的高度
+function changeHight(){
+	$("header").style.height=$("header").children[0].scrollHeight+"px";
 }
 //创建搜索窗口
 if($('search') == null) {
@@ -35,10 +54,10 @@ if($('loadIn') == null) {
 			<div class="menuCont">
 				<ul>
 					<li><a href="index.html">首页</a></li>
-					<li><a href="web.html">Web前端</a></li>
-					<li><a href="talk.html">闲文杂谈</a></li>
-					<li><a href="photo.html">否头笑谱</a></li>
-					<li><a href="u3d.html">U3D记录</a></li>
+					<li><a href="web.html?ojbk1">Web前端</a></li>
+					<li><a href="web.html?ojbk2">闲文杂谈</a></li>
+					<li><a href="web.html?ojbk3">否头笑谱</a></li>
+					<li><a href="web.html?ojbk4">U3D记录</a></li>
 					<li><a href="msg.html">足迹</a></li>
 					<li><a href="javascript:loadIn()"><img src="img/admin.png"> 登录</a></li>
 				</ul>
