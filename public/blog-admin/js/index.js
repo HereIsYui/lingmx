@@ -48,6 +48,7 @@ function addMenu(){
 		var html=`<div id="menu">
 			<div class="menuCont">
 				<ul>
+					<li><img src="img/lingmx-logo.png"></li>
 					<li><a href="javascript:changeCount(0)">后台主页</a></li>
 					<li><a href="javascript:changeCount(-90)">新建文章</a></li>
 					<li><a href="javascript:changeCount(-180)">编辑文章</a></li>
@@ -59,6 +60,7 @@ function addMenu(){
 		document.body.innerHTML+=html;
 	}
 }
+
 //弹出菜单栏
 function menu(){
 	$("menu").style.display="block";
@@ -134,7 +136,6 @@ function delHtmlTag(str){
 //查看效果方法
 function showCont(){
 	var height = window.innerHeight;
-	console.log(height);
 	var wordBox= window.showFrame.document.getElementById("cont");
 	var titleBox = window.showFrame.document.getElementById("c_title");
 	var title=$('nwTitle').value;
@@ -143,6 +144,9 @@ function showCont(){
 	wordBox.innerHTML=word;
 	titleBox.innerHTML=title;
 	$('showCont').style.cssText='display:block;';
+	if(window.innerWidth<991){
+		$('showCont').firstElementChild.style.width='100%';
+	}
 	$('showCont').style.cssText+='height:'+height+'px';
 	setTimeout(()=>{$('showCont').style.cssText+='opacity:1;';},300);
 }
@@ -166,12 +170,9 @@ function inputHx(i){
 	$('nwCont').value+="<h"+i+"></h"+i+">";//点击添加标题标签
 }
 //隐藏效果显示
-var $showCont=document.getElementById("showCont");
-console.log($showCont);
-$showCont.onclick=function(){
-	console.log(111);
-	$showCont.style.cssText+='opacity:0';
-	setTimeout(()=>{$showCont.style.cssText+='display:none';},500);
+function offShowCont(){
+	$('showCont').style.cssText+='opacity:0';
+	setTimeout(()=>{$('showCont').style.cssText+='display:none';},500);
 }
 //提交新的文章
 function subWord(){
@@ -257,20 +258,22 @@ function getWordList(currentPage) {
 }
 //删除文章
 function deleteWord(id){
-	var xhr=new XMLHttpRequest();
-	xhr.open('get','/word/deleteWord?w_id='+id,true);
-	xhr.onreadystatechange=function(){
-		if(xhr.readyState==4&&xhr.status==200){
-			var res=xhr.responseText;
-			if(res=='1'){
-				alert('删除成功!');
-				getWordList(1);
-			}else{
-				alert('删除失败，请联系管理员');
+	if(confirm(`确认要删除 id为:${id} 的文章吗`)==true){
+		var xhr=new XMLHttpRequest();
+		xhr.open('get','/word/deleteWord?w_id='+id,true);
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var res=xhr.responseText;
+				if(res=='1'){
+					alert('删除成功!');
+					getWordList(1);
+				}else{
+					alert('删除失败，请联系管理员');
+				}
 			}
 		}
+		xhr.send(null);
 	}
-	xhr.send(null);
 }
 //修改文章-显示修改界面
 function updateWord(id){
@@ -281,6 +284,9 @@ function updateWord(id){
 			var res=JSON.parse(xhr.responseText);
 			var height = window.innerHeight;
 			$('updateWord').style.cssText="display:block;height:"+height+"px;";
+			if(window.innerWidth<991){
+				$("upWord").style.width="100%";
+			}
 			setTimeout(()=>{$('updateWord').style.cssText+="opacity:1;";},100);
 			var i=res[0].family_id;
 			var updateClass=$('upClass').getElementsByTagName('option')[i-1];
@@ -330,10 +336,10 @@ function subupWord(){
 	xhr.send(formdata);
 }
 //隐藏修改界面
-$('upWord').onclick=function(){//阻止事件冒泡
+function stopOffUpdate(){//阻止事件冒泡
 	window.event ? window.event.cancelBubble = true : e.stopPropagation();
 }
-$('updateWord').onclick=function(){//隐藏界面 
+function offUpDateWord(){//隐藏界面 
 	$('updateWord').style.opacity="0";
 	$('updateWord').style.height="0";
 	setTimeout(()=>{$('updateWord').style.cssText+="display:none;"},500);
@@ -387,6 +393,9 @@ function replyMsg(id){
 			var res=JSON.parse(xhr.responseText);
 			var height = window.innerHeight;
 			$('replyMsg').style.cssText="display:block;height:"+height+"px;";
+			if(window.innerWidth<991){
+				$("orgMsg").style.width="100%";
+			}
 			setTimeout(()=>{$('replyMsg').style.cssText+="opacity:1;";},100);
 			$('msgName').innerHTML=res.m_name;
 			$('msgTitle').innerHTML=res.m_title;
@@ -421,10 +430,10 @@ function subReplyMsg(){
 	xhr.send(formdata);
 }
 //隐藏回复留言界面
-$('orgMsg').onclick=function(){//阻止事件冒泡
+function stopOffReply(){//阻止事件冒泡
 	window.event ? window.event.cancelBubble = true : e.stopPropagation();
 }
-$('replyMsg').onclick=function(){//隐藏界面 
+function offReply(){//隐藏界面 
 	$('replyMsg').style.opacity="0";
 	$('replyMsg').style.height="0";
 	setTimeout(()=>{$('replyMsg').style.cssText+="display:none;"},500);
@@ -432,18 +441,20 @@ $('replyMsg').onclick=function(){//隐藏界面
 }
 //删除留言
 function deleteMsg(id){
-	var xhr=new XMLHttpRequest();
-	xhr.open('get','/msg/deleteMsg?m_id='+id,true);
-	xhr.onreadystatechange=function(){
-		if(xhr.readyState==4&&xhr.status==200){
-			var res=xhr.responseText;
-			if(res=='1'){
-				alert('删除成功!');
-				getMsgList(1,15);
-			}else{
-				alert('删除失败，请联系管理员');
+	if(confirm(`确认要删除 id为:${id} 的留言吗`)==true){
+		var xhr=new XMLHttpRequest();
+		xhr.open('get','/msg/deleteMsg?m_id='+id,true);
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var res=xhr.responseText;
+				if(res=='1'){
+					alert('删除成功!');
+					getMsgList(1,15);
+				}else{
+					alert('删除失败，请联系管理员');
+				}
 			}
 		}
+		xhr.send(null);
 	}
-	xhr.send(null);
 }

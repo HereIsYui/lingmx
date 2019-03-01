@@ -195,12 +195,12 @@
 			</div>
 		</div>
 		<!-- 文章预览 -->
-		<div id="showCont" >
-			<iframe src="word.html" width="80%" height="600px" name="showFrame" frameborder="0"></iframe>
+		<div id="showCont" onclick="offShowCont()" class="pt-5 pb-5">
+			<iframe src="word.html" width="80%" height="100%" name="showFrame" frameborder="0"></iframe>
 		</div>
 		<!-- 文章修改 -->
-		<div id="updateWord">
-			<div id="upWord">
+		<div id="updateWord" onclick="offUpDateWord()" class="pt-md-5 pb-md-5">
+			<div id="upWord" onclick="stopOffUpdate()">
 				<h3>修改文章</h3>
 				<hr />
 				<div id="upWordTitle">
@@ -221,14 +221,15 @@
 					<h3>文章内容：</h3>
 					<div id="upContent">
 						<textarea id="upCont" placeholder="请输入带html标签的文本，点击按钮查看效果"></textarea>
-						<button onclick="subupWord()" >提交修改</button>
+						<button class="btn btn-success" onclick="subupWord()" >提交修改</button>
+						<button class="btn btn-warning" onclick="offUpDateWord()">取消修改</button>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 回复留言 -->
-		<div id="replyMsg">
-			<div id="orgMsg">
+		<div id="replyMsg" onclick="offReply()">
+			<div id="orgMsg" onclick="stopOffReply()">
 				<h3>回复留言</h3>
 				<div>
 					<p>留言昵称：<span id="msgName"></span></p>
@@ -239,7 +240,8 @@
 				<div>
 					<textarea id="replyCount" placeholder="请输入回复内容"></textarea>
 				</div>
-				<button onclick="subReplyMsg()">提交回复</button>
+				<button class="btn btn-success" onclick="subReplyMsg()">提交回复</button>
+				<button class="btn btn-warning" onclick="offReply()">取消回复</button>
 			</div>
 		</div>
 		<div class="container-fluid p-0">

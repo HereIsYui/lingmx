@@ -53,6 +53,7 @@ if($('loadIn') == null) {
 		var html=`<div id="menu">
 			<div class="menuCont">
 				<ul>
+					<li><img src="img/lingmx-logo.png"></li>
 					<li><a href="index.html">首页</a></li>
 					<li><a href="web.html?ojbk1">Web前端</a></li>
 					<li><a href="web.html?ojbk2">闲文杂谈</a></li>
@@ -63,8 +64,9 @@ if($('loadIn') == null) {
 				</ul>
 			</div>
 		</div>`
-		searchObj.innerHTML+=html;
-	}	
+		searchObj.innerHTML+=html; 
+		
+	}
 }
 if(window.innerWidth<991){
 	addMenu();

@@ -24,6 +24,7 @@ function getWord(){
 			$('cont').innerHTML+='<hr style="margin:20px 0"><p align="right"><a href="msg.html">&gt;留下我的脚印&lt;</a></p>';
 			$('cont').innerHTML+='<p align="right"><a href="index.html">&gt;返回首页&lt;</a></p>';
 			$('c_title').innerHTML=res[0].w_title;
+			document.title=res[0].w_title+"|LMX的私密小屋";
 			$('wed').innerHTML='<div id="cont_date"><span id="cont_read"> '+res[0].w_read+' </span>阅读 作者：LingMX 发布时间：'+res[0].w_date+'</div>';
 		}
 	}

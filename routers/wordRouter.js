@@ -77,7 +77,8 @@ router.get('/getWordList',(req,res)=>{
 //5.发布文章
 router.post('/subWord',(req,res)=>{
 	var msg=req.body;
-	msg.w_date=new Date().toLocaleDateString();
+	var today=new Date();//获取当前时间
+	msg.w_date=`${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;//拼接日期
 	pool.query('INSERT INTO lmx_word SET ?',[msg],(err,result)=>{
 		if(err) throw err;
 		if(result.affectedRows>0){

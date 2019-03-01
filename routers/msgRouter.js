@@ -32,7 +32,8 @@ router.get('/getMsg',(req,res)=>{
 //2.添加留言
 router.post('/subMsg',(req,res)=>{
 	var msg=req.body;
-	msg.m_date=new Date().toLocaleDateString();
+	var today=new Date();//获取当前时间
+	msg.m_date=`${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;//拼接日期
 	pool.query('INSERT INTO lmx_msg SET ?',[msg],(err,result)=>{
 		if(err) throw err;
 		if(result.affectedRows>0){

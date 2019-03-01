@@ -26,9 +26,6 @@
 		height: 12.5rem;
 	}
 }
-.w-70{
-	 width: 70% !important;
-}
 /*共用样式*/
 h1,h2,h3,h4,h5,h6,ul,ol,p,pre,hr,body,iframe,blockquote{
 	margin: 0;
@@ -276,17 +273,26 @@ body{
 .menuCont a,.menuCont li{
 	display:block;
 	width: 100%;
-	height: 3.75rem;
-	text-align: center;
+	height: 3rem;
+	box-sizing: border-box;
+	padding-left: 10%;
 	transition: 0.5s;
-	line-height: 3.75rem;
+	line-height: 3rem;
 	cursor: pointer;
-	font-size:1.25rem;
+	font-size:1rem;
 }
 .menuCont li:hover a{
 	color:#f8962e;
 }
-.menuCont img{
+.menuCont li:first-child{
+	height: 6rem;
+	line-height: 6rem;
+	text-align: center;
+}
+.menuCont li:first-child img{
+	width: 60%;
+}
+.menuCont li:last-child img{
 	width: 1.5625rem;
 	vertical-align: middle;
 }

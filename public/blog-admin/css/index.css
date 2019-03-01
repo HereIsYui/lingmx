@@ -70,16 +70,25 @@ path{
 .menuCont a,.menuCont li{
 	display:block;
 	width: 100%;
-	height: 3.75rem;
+	height: 3rem;
 	color: #fff;
-	text-align: center;
+	box-sizing: border-box;
+	padding-left: 10%;
 	transition: 0.5s;
-	line-height: 3.75rem;
+	line-height: 3rem;
 	cursor: pointer;
-	font-size:1.25rem;
+	font-size:1rem;
 }
 .menuCont li:hover a{
 	color:#A7DBD8;
+}
+.menuCont li:first-child{
+	height: 6rem;
+	line-height: 6rem;
+	text-align: center;
+}
+.menuCont li:first-child img{
+	width: 60%;
 }
 /*顶部导航*/
 #nav{
@@ -298,12 +307,7 @@ path{
 	margin: 0 auto 0.625rem;
 }
 #nwContent button,#upContent button                                                                                                          {
-	width: 6.25rem;
-	height: 1.875rem;
-	background: #A7DBD8;
 	color:#fff;
-	cursor: pointer;
-	border-radius: 0.3125rem;
 }
 #showCont{
 	display: none;
@@ -313,7 +317,6 @@ path{
 	transition: 1s;
 	opacity: 0;
 	text-align: center;
-	padding-top: 6.25rem;
 	color: #000;
 	overflow: auto;
 	position: fixed;
@@ -324,8 +327,6 @@ path{
 	border: 1px dotted #797979;
 }
 /*编辑文章，编辑留言*/
-#wordList,#msgList{
-}
 #wordList tr th,#msgList tr th{
 	border-bottom: 1px dotted #797979;
 }
@@ -361,19 +362,15 @@ path{
 	text-align: center;
 	transition: 0.5s;
 	background:rgba(0,0,0,0.6);
-	padding-top: 9.375rem;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 9900;
 }
-#updateWord{
-	padding-top:6.25rem;
-}
 /*编辑文章样式*/
 #upWord{
 	width: 70%;
-	height: 37.5rem;
+	height: 100%;
 	margin: 0 auto;
 	background: #fff;
 	padding-top:1.25rem;
@@ -416,7 +413,7 @@ path{
 /*回复留言样式*/
 #orgMsg{
 	width: 60%;
-	height: 500px;
+	height: 100%;
 	margin: 0 auto;
 	background: #fff;
 	padding-top:1.25rem;
@@ -442,10 +439,5 @@ path{
 	resize: none;
 }
 #orgMsg>button{
-	width: 6.25rem;
-	height: 1.875rem;
-	cursor: pointer;
 	color: #fff;
-	background: #A7DBD8;
-	border-radius: 5px;
 }
