@@ -16,14 +16,13 @@ window.onload=function(){
 }
 //导航栏方法
 function changeCount(i){
-	$('cont_list').style.cssText = 'transform: rotateY(' + i + 'deg);';
+	$('cont_list').style.cssText = 'transform: rotateY(' + i + 'deg);-ms-transform: rotateY(' + i + 'deg);-moz-transform: rotateY(' + i + 'deg);-webkit-transform: rotateY(' + i + 'deg);-o-transform: rotateY(' + i + 'deg);';
 	$('cont_list').setAttribute("data-rotateY",i);
 	if($('nwTitle').value){$('nwTitle').value=''; $('nwTitle').style.color='#797979';};
 	if($('nwCont').value){$('nwCont').value='';};
 	changeHeight();
 }
 window.onresize=changeHeight;
-
 function changeHeight(){
 	var thisHight=$('cont_list').getAttribute("data-rotateY");
 	$("content").removeAttribute("style");
@@ -42,23 +41,6 @@ function changeHeight(){
 			break;
 	}
 	
-}
-function addMenu(){
-	if($('menu') == null){
-		var html=`<div id="menu">
-			<div class="menuCont">
-				<ul>
-					<li><img src="img/lingmx-logo.png"></li>
-					<li><a href="javascript:changeCount(0)">后台主页</a></li>
-					<li><a href="javascript:changeCount(-90)">新建文章</a></li>
-					<li><a href="javascript:changeCount(-180)">编辑文章</a></li>
-					<li><a href="javascript:changeCount(-270)">编辑留言</a></li>
-					<li><a href="../index.html">返回博客</a></li>
-				</ul>
-			</div>
-		</div>`
-		document.body.innerHTML+=html;
-	}
 }
 
 //弹出菜单栏

@@ -98,6 +98,7 @@ path{
 	position: relative;
 	cursor: pointer;
 	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
 }
 #logo,#nav_bir{
 	height: 5rem;
@@ -106,11 +107,19 @@ path{
 	left: 0;
 }
 #logo{
-	transform: rotateX(0) translateZ(40px);
+	transform: rotateX(0) translateZ(2.5rem);
+	-ms-transform: rotateX(0) translateZ(2.5rem); 	
+	-moz-transform: rotateX(0) translateZ(2.5rem); 	
+	-webkit-transform: rotateX(0) translateZ(2.5rem);
+	-o-transform: rotateX(0) translateZ(2.5rem); 
 }
 
 #nav:hover{
 	transform: rotateX(-90deg);
+	-ms-transform:rotateX(-90deg);
+	-moz-transform: rotateX(-90deg); 	
+	-webkit-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
 }
 #logo img{
 	border: 0.0625rem solid transparent;
@@ -119,7 +128,11 @@ path{
 	color:#fff;
 }
 #nav_bir{
-	transform: rotateX(90deg) translateZ(40px);
+	transform: rotateX(90deg) translateZ(2.5rem);
+	-ms-transform: rotateX(90deg) translateZ(2.5rem);
+	-moz-transform: rotateX(90deg) translateZ(2.5rem);
+	-webkit-transform: rotateX(90deg) translateZ(2.5rem);
+	-o-transform: rotateX(90deg) translateZ(2.5rem);
 }
 #nav_bir ul li{
 	width: 6.25rem;
@@ -190,6 +203,7 @@ path{
 	transition: 0.5s;
 	position: relative;
 	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
 }
 #cont1,#cont2,#cont3,#cont4 {
 	min-height: 50rem;
@@ -202,15 +216,31 @@ path{
 }
 #cont1{
 	transform: rotateY(0) translateZ(400px);
+	-ms-transform: rotateY(0) translateZ(400px);
+	-moz-transform: rotateY(0) translateZ(400px);
+	-webkit-transform: rotateY(0) translateZ(400px);
+	-o-transform: rotateY(0) translateZ(400px);
 }
 #cont2{
 	transform: rotateY(90deg) translateZ(400px);
+	-ms-transform: rotateY(90deg) translateZ(400px);
+	-moz-transform: rotateY(90deg) translateZ(400px);
+	-webkit-transform: rotateY(90deg) translateZ(400px);
+	-o-transform: rotateY(90deg) translateZ(400px);
 }
 #cont3{
 	transform: rotateY(180deg) translateZ(400px);
+	-ms-transform: rotateY(180deg) translateZ(400px);
+	-moz-transform: rotateY(180deg) translateZ(400px);
+	-webkit-transform: rotateY(180deg) translateZ(400px);
+	-o-transform: rotateY(180deg) translateZ(400px);
 }
 #cont4{
 	transform: rotateY(270deg) translateZ(400px);
+	-ms-transform: rotateY(270deg) translateZ(400px);
+	-moz-transform: rotateY(270deg) translateZ(400px);
+	-webkit-transform: rotateY(270deg) translateZ(400px);
+	-o-transform: rotateY(270deg) translateZ(400px);
 }
 /*后台首页*/
 #today>div{
